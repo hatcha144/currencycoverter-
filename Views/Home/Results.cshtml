@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Results";
+}
+
+
+    @model IEnumerable<CurrencyAPI.Models.Currency>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            /* Create two unequal columns that floats next to each other */
+            .column {
+                float: left;
+                padding: 10px;
+                /*height: 300px; /* Should be removed. Only for demonstration */*/
+            }
+
+            .left {
+                width: 35%;
+            }
+
+            .right {
+                width: 65%;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Username: @Session["UserName"].ToString()</h3>
+        <a href="@Url.Action("LogOut","Login")">LogOut</a>
+        <div class="row">
+            <div class="column left" style="background-color:#aaa;">
+                <h2>Countries</h2>
+                <p>Bulgaria</p>
+                <p>New Zeeland</p>
+                <p>Israeli New Shekel</p>
+                <p>Russia</p>
+                <p>Canada</p>
+                <p>United States</p>
+                <p>Philipines</p>
+                <p>Swiss Franc</p>
+                <p>Australia</p>
+                <p>Japan</p>
+                <p>Turkey</p>
+                <p>Hong Kong</p>
+                <p>Malaysian</p>
+                <p>Croatia</p>
+                <p>Czech</p>
+                <p>Indoneisa</p>
+                <p>Danish</p>
+                <p>Norwegian</p>
+                <p>Hungary</p>
+                <p>United Kingdom</p>
+                <p>Mexico</p>
+                <p>Thailand</p>
+                <p>Iceland</p>
+                <p>South Africa</p>
+                <p>Brazil</p>
+                <p>Singapore</p>
+                <p>Poland</p>
+                <p>India</p>
+                <p>South Korea</p>
+                <p>Romania</p>
+                <p>China</p>
+                <p>Sweden</p>
+                <p>Euro</p>
+
+            </div>
+            <div class="column right" style="background-color:#bbb;">
+                <h2>Rates</h2>
+                @foreach (var m in ViewBag.CurrencyList)
+                {
+
+                    <p>@m.Rates</p>
+
+                }
+
+            </div>
+        </div>
+    </body>
+</html>
+       
+  
+
